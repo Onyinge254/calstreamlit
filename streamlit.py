@@ -12,7 +12,7 @@ with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 # Load your first dataset
-data1 = pd.read_excel('c:\\Users\\User\\Downloads\\ACM AND RESPECTIVE TEAM LEADERS (1) (7).xlsx')
+data1 = pd.read_excel('ACM AND RESPECTIVE TEAM LEADERS (1) (7).xlsx')
 
 # Load your second dataset
 data2 = pd.read_excel('https://analytics.collections.co.ke/public/question/e4a43b9a-6a22-403b-af41-ac8d8c8c693a.xlsx')
