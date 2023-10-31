@@ -1,0 +1,19 @@
+/* Update background and text colors for dark mode */
+[data-testid=metric-container] {
+    box-shadow: 0 0 4px #222; /* Dark background color */
+    padding: 10px;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.plot-container>div {
+    box-shadow: 0 0 4px #222; /* Dark background color */
+    padding: 10px;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+div[data-testid="stExpander"] div[role="button"] p {
+    font-size: 1.3rem;
+    color: #eee; /* Light text color */
+}
