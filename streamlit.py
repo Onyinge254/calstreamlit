@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import time
+from sqlalchemy import create_engine
 
-
+# Start the auto-refresh loop in a separate thread
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide",)
 st.subheader("🔔  Analytics Dashboard")
 st.markdown("##")
@@ -11,11 +13,14 @@ theme_plotly = None # None or streamlit
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
-# Load your first dataset
-data1 = pd.read_excel('ACM AND RESPECTIVE TEAM LEADERS (1) (7).xlsx')
+    # Load your datasets and perform any necessary updates here
+    data1 = pd.read_excel('ACM AND RESPECTIVE TEAM LEADERS (1) (7).xlsx')
+    data2 = pd.read_excel('https://analytics.collections.co.ke/public/question/e4a43b9a-6a22-403b-af41-ac8d8c8c693a.xlsx')
 
-# Load your second dataset
-data2 = pd.read_excel('https://analytics.collections.co.ke/public/question/e4a43b9a-6a22-403b-af41-ac8d8c8c693a.xlsx')
+    # Your data processing logic here
+    engine = create_engine('postgresql://Onyinge_254:Nyamira2021#@localhost:5432/pi')
+    # Render the updated content
+    st.markdown("Last updated at: " + time.ctime())
 
 
 # Create a sidebar
@@ -106,3 +111,10 @@ with col1:
 with col2:
     st.plotly_chart(fig_pie)
 
+    while True:
+        # Call the update_dashboard function to refresh the content
+        
+        # Sleep for 5 seconds to control the update frequency
+        time.sleep(10)
+        # Rerun the Streamlit app to update the content
+        st.experimental_rerun()
