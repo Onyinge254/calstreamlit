@@ -110,10 +110,7 @@ with col1:
 with col2:
     st.plotly_chart(fig_pie)
 
-    while True:
-        # Call the update_dashboard function to refresh the content
+
         
-        # Sleep for 5 seconds to control the update frequency
-        time.sleep(10)
-        # Rerun the Streamlit app to update the content
-        st.experimental_rerun()
+    time.sleep(15)
+    st.experimental_rerun()
