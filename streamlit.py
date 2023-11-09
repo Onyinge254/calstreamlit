@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import time
-from sqlalchemy import create_engine
+
 
 # Start the auto-refresh loop in a separate thread
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide",)
@@ -18,7 +18,6 @@ with open('style.css')as f:
     data2 = pd.read_excel('https://analytics.collections.co.ke/public/question/e4a43b9a-6a22-403b-af41-ac8d8c8c693a.xlsx')
 
     # Your data processing logic here
-    engine = create_engine('postgresql://Onyinge_254:Nyamira2021#@localhost:5432/pi')
     # Render the updated content
     st.markdown("Last updated at: " + time.ctime())
 
